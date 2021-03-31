@@ -1,0 +1,50 @@
+<!--<h1>Pokémons</h1>-->
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <input #box (keyup)="onKey(box.value)"> <p>{{value}}</p>-->
+<!--        <div *ngFor='let pokemon of pokemons' class="col s6 m4">-->
+<!--            <div class="card-image">-->
+<!--                <img src="pokemon.picture">-->
+<!--            </div>-->
+<!--            <div class="card-stacked">-->
+<!--                <div class="card-content">-->
+<!--                    <p>{{pokemon.name}}</p>-->
+<!--                    <p><small>{{pokemon.created}}</small></p>-->
+<!--                    <button (click)="selectPokemon(pokemon)">Click</button>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<input #box  (keyup.enter)="values=box.value">-->
+<!--<p>{{values}}</p>-->
+<!--<thead>Pokémons</thead>-->
+
+<!--<p *ngIf="age>18">Ceci est un message destiné aux personne majeurs.</p>-->
+
+
+<!--<ul>-->
+<!--    <li *ngFor="let pokemon of pokemons">{{pokemon.name}}</li>-->
+<!--</ul>-->
+<h1 class='center'>Pokémons</h1>
+<div class='container'>
+    <div class="row" borderHeight>
+        <div *ngFor='let pokemon of pokemons;let index =index' class="col s6 m4">
+            <div class="card horizontal" (click)="selectPokemon(pokemon)"   pkmnBorderCard="yellow">
+                <div class="card-image"  >
+                    <img [src]="pokemon.picture">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p [ngStyle]="{'color':index%2==0 ?'green':colorNg}">{{ pokemon.name }} {{index}}</p>
+                        <p><small >{{ pokemon.created }}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

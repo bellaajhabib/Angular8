@@ -1,0 +1,21 @@
+
+<h1 class='center'>Pokémons</h1>
+<div class='container'>
+    <div class="row" borderHeight>
+        <div *ngFor='let pokemon of pokemons;let index =index' class="col s6 m4">
+            <div class="card horizontal" (click)="selectPokemon(pokemon)"   pkmnBorderCard="yellow">
+                <div class="card-image"  >
+                    <img [src]="pokemon.picture">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p [ngStyle]="{'color':index%2==0 ?'green':colorNg}">{{ pokemon.name }} {{index}}</p>
+                        <p><small >{{ pokemon.created }}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
