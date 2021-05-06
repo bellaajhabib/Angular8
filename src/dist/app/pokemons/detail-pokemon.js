@@ -10,32 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const mock_pokemons_1 = require("./mock-pokemons");
 const router_1 = require("@angular/router");
-let ListPokemonComponent = class ListPokemonComponent {
-    constructor(router) {
+const mock_pokemons_1 = require("./mock-pokemons");
+let DetailPokemonComponent = class DetailPokemonComponent {
+    constructor(route, router) {
+        this.route = route;
         this.router = router;
-        this.name = 'Angular';
         this.pokemons = null;
-        //private values:string ='';
-        this.colorNg = '';
-        this.age = 20;
+        this.pokemon = null;
     }
     ngOnInit() {
         this.pokemons = mock_pokemons_1.POKEMONS;
+        let id = +this.route.snapshot.paramMap.get('id');
+        for (let i = 0; i < this.pokemons.length; i++) {
+            if (this.pokemons[i].id == id) {
+                this.pokemon = this.pokemons[i];
+            }
+        }
     }
-    selectPokemon(pokemon) {
-        console.log(`vous avec cliqué sur ${pokemon.name}`);
-        let link = ['/pokemon', pokemon.id];
-        this.router.navigate(link);
+    goBack() {
+        this.router.navigate(['/pokemons']);
     }
 };
-ListPokemonComponent = __decorate([
+DetailPokemonComponent = __decorate([
     core_1.Component({
-        selector: 'list-pokemon',
-        templateUrl: `../../app/pokemons/list-pokemon.html`,
+        selector: 'detail-pokemon',
+        templateUrl: "../../app/pokemons/detail-pokemon.html"
     }),
-    __metadata("design:paramtypes", [router_1.Router])
-], ListPokemonComponent);
-exports.ListPokemonComponent = ListPokemonComponent;
-//# sourceMappingURL=list-pokemon.js.map
+    __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
+], DetailPokemonComponent);
+exports.DetailPokemonComponent = DetailPokemonComponent;
+//# sourceMappingURL=detail-pokemon.js.map

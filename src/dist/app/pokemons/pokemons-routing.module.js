@@ -8,23 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
-const page_not_found_component_1 = require("./page-not-found.component");
-// routes
-const appRoutes = [
-    { path: '', redirectTo: 'pokemons', pathMatch: 'full' },
-    { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
+const list_pokemon_1 = require("./list-pokemon");
+const detail_pokemon_1 = require("./detail-pokemon");
+// les routes du module Pokémon
+const pokemonsRoutes = [
+    { path: 'pokemons', component: list_pokemon_1.ListPokemonComponent },
+    { path: 'pokemon/:id', component: detail_pokemon_1.DetailPokemonComponent }
 ];
-let AppRoutingModule = class AppRoutingModule {
+let PokemonRoutingModule = class PokemonRoutingModule {
 };
-AppRoutingModule = __decorate([
+PokemonRoutingModule = __decorate([
     core_1.NgModule({
         imports: [
-            router_1.RouterModule.forRoot(appRoutes)
+            router_1.RouterModule.forChild(pokemonsRoutes)
         ],
         exports: [
             router_1.RouterModule
         ]
     })
-], AppRoutingModule);
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+], PokemonRoutingModule);
+exports.PokemonRoutingModule = PokemonRoutingModule;
+//# sourceMappingURL=pokemons-routing.module.js.map

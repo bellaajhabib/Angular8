@@ -35,7 +35,7 @@ let DetailPokemonComponent = class DetailPokemonComponent {
 DetailPokemonComponent = __decorate([
     core_1.Component({
         selector: 'detail-pokemon',
-        templateUrl: './app/detail-pokemon.html'
+        templateUrl: '../../app/pokemons/detail-pokemon.html'
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
 ], DetailPokemonComponent);

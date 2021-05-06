@@ -9,20 +9,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
 const app_component_1 = require("./app.component");
-const border_card_directive_1 = require("./border-card.directive");
 const forms_1 = require("@angular/forms");
-const detail_pokemon_1 = require("./detail-pokemon");
-const list_pokemon_1 = require("./list-pokemon");
 const app_routing_module_1 = require("./app-routing.module");
-const pokemon_type_color_pipe_1 = require("./pokemon-type-color.pipe");
 const page_not_found_component_1 = require("./page-not-found.component");
+const pokemons_module_1 = require("./pokemons/pokemons.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule],
-        declarations: [app_component_1.AppComponent, border_card_directive_1.BorderCardDirective, detail_pokemon_1.DetailPokemonComponent, list_pokemon_1.ListPokemonComponent, pokemon_type_color_pipe_1.PokemonTypeColorPipe,
-            page_not_found_component_1.PageNotFoundComponent],
+        imports: [
+            platform_browser_1.BrowserModule,
+            pokemons_module_1.PokemonsModule,
+            forms_1.FormsModule,
+            app_routing_module_1.AppRoutingModule
+        ],
+        declarations: [
+            app_component_1.AppComponent,
+            page_not_found_component_1.PageNotFoundComponent
+        ],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

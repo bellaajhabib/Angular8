@@ -1,16 +1,12 @@
-import { NgModule }              from '@angular/core';
-import { RouterModule, Routes }  from '@angular/router';
-import {ListPokemonComponent} from "./list-pokemon";
-import {DetailPokemonComponent} from "./detail-pokemon";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {PageNotFoundComponent} from "./page-not-found.component";
 
 
 // routes
 const appRoutes: Routes = [
-    { path: 'pokemons', component: ListPokemonComponent },
-    { path: 'pokemon/:id', component: DetailPokemonComponent },
-    { path: '', redirectTo: 'pokemons', pathMatch: 'full' },
-    { path:'**', component: PageNotFoundComponent}
+    {path: '', redirectTo: 'pokemons', pathMatch: 'full'},
+    {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
@@ -21,4 +17,5 @@ const appRoutes: Routes = [
         RouterModule
     ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const mock_pokemons_1 = require("./mock-pokemons");
+const mock_pokemons_1 = require("./pokemons/mock-pokemons");
 let AppComponent = class AppComponent {
     constructor() {
         this.name = 'Angular';
